@@ -15,9 +15,19 @@ derivada(c)(2) // 8
 derivada(d)(1) // 1
 derivada(e)(2) // 60
 
+derivadaSuma(a, b)(1) // 3
+derivadaSuma(c, d)(32) // 129.0
+derivadaSuma(d, e)(3) // 136.0
+derivadaSuma(a, d)(10) // 0.99
+derivadaSuma(a, e)(5) // 374.99
 
-//Pruebas del taller
+derivadaResta(a, b)(1) // -3.0
+derivadaResta(a, b)(32) //-3072
+derivadaResta(a, b)(3) // -27
+derivadaResta(a, b)(10) // -299.99
+derivadaResta(a, b)(5) // -74.99
 
+//Pruebas de ejemplo del taller
 val cte = (x:Double) => 2.0
 val f = (x:Double) => (x*x)
 val g = (x:Double) => (x*x*x)
