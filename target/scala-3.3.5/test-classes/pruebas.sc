@@ -2,30 +2,43 @@ import Derivacion . _
 import math .pow
 
 // Funciones a ser pasadas
-val a = (x: Double) => 2.0
-val b = (x: Double) => x*x*x
+val a = (x: Double) => 4.0
+val b = (x: Double) => x*x*x*x
 val c = (x: Double) => 2*x*x
 val d = (x: Double) => x
 val e = (x: Double) => 5*x*x*x
 
 // Pruebas
-derivada(a)(2) // 0
-derivada(b)(1) // 3
-derivada(c)(2) // 8
-derivada(d)(1) // 1
-derivada(e)(2) // 60
+derivada(a)(1) // 0
+derivada(b)(32) // 131072.0
+derivada(c)(3) // 12.0
+derivada(d)(10) // 0.99
+derivada(e)(5) // 374.99
 
-derivadaSuma(a, b)(1) // 3
+derivadaSuma(a, b)(1) // 4.0
 derivadaSuma(c, d)(32) // 129.0
 derivadaSuma(d, e)(3) // 136.0
 derivadaSuma(a, d)(10) // 0.99
 derivadaSuma(a, e)(5) // 374.99
 
-derivadaResta(a, b)(1) // -3.0
-derivadaResta(a, b)(32) //-3072
-derivadaResta(a, b)(3) // -27
-derivadaResta(a, b)(10) // -299.99
-derivadaResta(a, b)(5) // -74.99
+derivadaResta(a, b)(1) // -4.0
+derivadaResta(c, d)(32) // 127.0
+derivadaResta(d, e)(3) // -134.0
+derivadaResta(a, d)(10) // -0.99
+derivadaResta(a, e)(5) // -374.99
+
+derivadaDiv(a, b)(1) // -16.0
+derivadaDiv(c, d)(32) // 2.0
+derivadaDiv(d, e)(3) // -0.015
+derivadaDiv(a, d)(10) // -0.04
+derivadaDiv(a, e)(5) // -0.0038
+
+derivadaMult(a, b)(1) // 16.0
+derivadaMult(c, d)(32) // 6144.0
+derivadaMult(d, e)(3) // 540.0
+derivadaMult(a, d)(10) // 3.99
+derivadaMult(a, e)(5) // 1499.99
+
 
 //Pruebas de ejemplo del taller
 val cte = (x:Double) => 2.0
@@ -43,7 +56,7 @@ h2(2)
 derivada(cte)(5)
 derivada(cte)(6)
 
-//pruebas extra
+//pruebas extra usando nuevas funciones anónimas y de scala
 
 val w = (x:Double) =>  x * x + 4 * x + 4
 val s = (x:Double) =>  x * x * x - 2 * x
